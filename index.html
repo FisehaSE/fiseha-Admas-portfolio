@@ -2218,35 +2218,7 @@
 
 
 
-              <!-- JavaScript -->
-              <script>
-                // Intersection Observer for reveal animations
-                const reveals = document.querySelectorAll('.reveal');
-                const observer = new IntersectionObserver((entries) => {
-                  entries.forEach((entry, i) => {
-                    if (entry.isIntersecting) {
-                      setTimeout(() => entry.target.classList.add('active'), i * 150);
-                    }
-                  });
-                }, {
-                  threshold: 0.1
-                });
-                reveals.forEach(el => observer.observe(el));
-
-                // Magnetic cursor effect
-                const mags = document.querySelectorAll('.magnetic');
-                mags.forEach(el => {
-                  el.addEventListener('mousemove', e => {
-                    const rect = el.getBoundingClientRect();
-                    const x = e.clientX - (rect.left + rect.width / 2);
-                    const y = e.clientY - (rect.top + rect.height / 2);
-                    el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-                  });
-                  el.addEventListener('mouseleave', () => {
-                    el.style.transform = '';
-                  });
-                });
-              </script>
+             
 
               <!-- GSAP core + ScrollTrigger -->
               <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
